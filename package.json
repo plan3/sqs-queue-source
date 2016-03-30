@@ -14,9 +14,10 @@
   },
   "devDependencies": {
     "eslint": "^1.10.3",
-    "eslint-config-vgno": "^5.0.0"
+    "eslint-config-vgno": "^5.0.0",
+    "eslint-plugin-promise": "^1.1.0"
   },
-  "publishConfig":{
-    "registry":"https://artifacts.schibsted.io/artifactory/api/npm/npm-local"
+  "publishConfig": {
+    "registry": "https://artifacts.schibsted.io/artifactory/api/npm/npm-local"
   }
 }
