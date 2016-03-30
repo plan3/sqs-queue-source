@@ -11,5 +11,9 @@
   "dependencies": {
     "aws-sdk": "^2.2.48",
     "bluebird": "^3.3.4"
+  },
+  "devDependencies": {
+    "eslint": "^1.10.3",
+    "eslint-config-vgno": "^5.0.0"
   }
 }
