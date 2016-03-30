@@ -1,0 +1,9 @@
+{
+  "extends": "vgno",
+  "env": {
+    "node": true,
+    "mocha": true,
+    "browser": false,
+    "es6": true
+  }
+}
