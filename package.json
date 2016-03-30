@@ -1,0 +1,15 @@
+{
+  "name": "@smp-relate/sqs-queue-sorce",
+  "version": "1.0.0",
+  "description": "SQS Queue Source for Queue Consumer",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.2.48",
+    "bluebird": "^3.3.4"
+  }
+}
