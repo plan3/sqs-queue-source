@@ -37,9 +37,7 @@ class SQSQueue {
                     return response.Messages;
                 }
 
-                this.logger(
-                    'Didn\'t get any new messages while long polling for ' + this.maxWaitTime + '. Continuing...'
-                );
+                this.logger(`Didn\'t get any new messages while long polling for ${this.maxWaitTime}. Continuing...`);
                 return this.getNextNonEmptyBatch();
             });
     }
@@ -50,7 +48,7 @@ class SQSQueue {
             ReceiptHandle: message.ReceiptHandle
         })
         .then(() => {
-            this.logger('Message with id ' + message.MessageId + ' deleted');
+            this.logger(`Message with id ${message.MessageId} deleted`);
         });
     }
 
@@ -61,7 +59,7 @@ class SQSQueue {
 
         return this.getNextNonEmptyBatch()
             .then(messages => {
-                this.logger('Just got ' + messages.length + ' messages ');
+                this.logger(`Just got ${messages.length} messages`);
                 let m = messages.pop();
                 this.messageBuffer = messages;
                 return m;
