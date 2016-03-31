@@ -1,5 +1,5 @@
 {
-  "name": "@smp-relate/sqs-queue-sorce",
+  "name": "sqs-queue-source",
   "version": "1.0.0",
   "description": "SQS Queue Source for Queue Consumer",
   "main": "index.js",
@@ -14,6 +14,10 @@
   },
   "devDependencies": {
     "eslint": "^1.10.3",
-    "eslint-config-vgno": "^5.0.0"
+    "eslint-config-vgno": "^5.0.0",
+    "eslint-plugin-promise": "^1.1.0"
+  },
+  "publishConfig": {
+    "registry": "https://artifacts.schibsted.io/artifactory/api/npm/npm-local"
   }
 }
