@@ -61,7 +61,7 @@ class SQSQueue {
             .then(messages => {
                 this.logger(`Just got ${messages.length} messages`);
                 let m = messages.pop();
-                this.messageBuffer = messages;
+                this.messageBuffer.push.apply(this.messageBuffer, messages);
                 return m;
             });
     }
