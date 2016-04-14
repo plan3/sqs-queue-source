@@ -1,6 +1,6 @@
 {
   "name": "sqs-queue-source",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "SQS Queue Source for Queue Consumer",
   "main": "index.js",
   "scripts": {
