@@ -10,7 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "aws-sdk": "^2.2.48",
-    "bluebird": "^3.3.4"
+    "bluebird": "^3.3.4",
+    "smp-gandalf": "0.0.1"
   },
   "devDependencies": {
     "eslint": "^1.10.3",

@@ -2,7 +2,7 @@
 
 const Promise = require('bluebird');
 const AWS = require('aws-sdk');
-const logger = console;
+const Gandalf = require('smp-gandalf');
 
 class SQSQueue {
     constructor(config) {
@@ -16,7 +16,7 @@ class SQSQueue {
         this.messageBuffer = [];
         this.maxWaitTime = config.maxWaitTime || 20;
         this.maxNumberOfMessages = config.maxNumberOfMessages || 10;
-        this.logger = config.logger || logger.log;
+        this.logger = new Gandalf(config.logger);
     }
 
     pollQueue() {
@@ -33,11 +33,13 @@ class SQSQueue {
             .then(response => {
                 if (response.Messages && response.Messages.length > 0) {
                     const ids = response.Messages.map(m => m.MessageId);
-                    this.logger('Got non empty batch of messages ' + ids);
+                    this.logger.info('Got non empty batch of messages ' + ids);
                     return response.Messages;
                 }
 
-                this.logger(`Didn\'t get any new messages while long polling for ${this.maxWaitTime}. Continuing...`);
+                this.logger.info(
+                    `Didn\'t get any new messages while long polling for ${this.maxWaitTime}. Continuing...`
+                );
                 return this.getNextNonEmptyBatch();
             });
     }
@@ -48,7 +50,9 @@ class SQSQueue {
             ReceiptHandle: message.ReceiptHandle
         })
         .then(() => {
-            this.logger(`Message with id ${message.MessageId} deleted`);
+            this.logger.info(`Message with id ${message.MessageId} deleted`);
+
+            return null;
         });
     }
 
@@ -59,7 +63,7 @@ class SQSQueue {
 
         return this.getNextNonEmptyBatch()
             .then(messages => {
-                this.logger(`Just got ${messages.length} messages`);
+                this.logger.info(`Just got ${messages.length} messages`);
                 let m = messages.pop();
                 this.messageBuffer.push.apply(this.messageBuffer, messages);
                 return m;
