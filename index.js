@@ -22,7 +22,7 @@ class SQSQueue {
     pollQueue() {
         return this.sqs.receiveMessageAsync({
             QueueUrl: this.queueUrl,
-            AttributeNames: ['All'],
+            MessageAttributeNames: ['All'],
             WaitTimeSeconds: this.maxWaitTime,
             MaxNumberOfMessages: this.maxNumberOfMessages
         });
