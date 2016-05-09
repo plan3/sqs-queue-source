@@ -2,7 +2,7 @@
 
 const Promise = require('bluebird');
 const AWS = require('aws-sdk');
-const Gandalf = require('smp-gandalf');
+const logger = console;
 
 class SQSQueue {
     constructor(config) {
@@ -16,7 +16,7 @@ class SQSQueue {
         this.messageBuffer = [];
         this.maxWaitTime = config.maxWaitTime || 20;
         this.maxNumberOfMessages = config.maxNumberOfMessages || 10;
-        this.logger = new Gandalf(config.logger);
+        this.logger = config.logger || logger;
     }
 
     pollQueue() {
