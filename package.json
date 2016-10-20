@@ -4,7 +4,9 @@
   "description": "SQS Queue Source for Queue Consumer",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint .",
+    "nsp": "nsp check"
   },
   "author": "",
   "license": "ISC",
@@ -13,9 +15,10 @@
     "bluebird": "^3.3.4"
   },
   "devDependencies": {
-    "eslint": "^1.10.3",
-    "eslint-config-vgno": "^5.0.0",
-    "eslint-plugin-promise": "^1.1.0"
+    "eslint": "3.7.1",
+    "eslint-config-vgno": "7.0.0",
+    "eslint-plugin-promise": "3.0.0",
+    "nsp": "2.6.2"
   },
   "publishConfig": {
     "registry": "https://artifacts.schibsted.io/artifactory/api/npm/npm-local"
