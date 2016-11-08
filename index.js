@@ -10,7 +10,7 @@ class SQSQueue {
         this.sqs = new AWS.SQS({
             region: config.region,
             accessKeyId: config.accessKeyId,
-            secretAccessKey: config.secretKey
+            secretAccessKey: config.secretAccessKey
         });
         Promise.promisifyAll(Object.getPrototypeOf(this.sqs));
         this.messageBuffer = [];
