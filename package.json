@@ -1,5 +1,5 @@
 {
-  "name": "sqs-queue-source",
+  "name": "plan3-sqs-queue-source",
   "version": "5.0.0",
   "description": "SQS Queue Source for Queue Consumer",
   "main": "index.js",
@@ -19,8 +19,5 @@
     "eslint-config-vgno": "7.0.0",
     "eslint-plugin-promise": "3.0.0",
     "nsp": "2.6.2"
-  },
-  "publishConfig": {
-    "registry": "https://artifacts.schibsted.io/artifactory/api/npm/npm-local"
   }
 }
