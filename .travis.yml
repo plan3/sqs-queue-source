@@ -11,7 +11,7 @@ branches:
   - master
 deploy:
   provider: npm
-  email: billing.media@schibsted.media
+  email: billing.relate@schibsted.media
   on:
     branch: master
     node: '6'
