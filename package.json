@@ -1,5 +1,5 @@
 {
-  "name": "plan3-sqs-queue-source",
+  "name": "sqs-queue-source",
   "version": "5.0.0",
   "description": "SQS Queue Source for Queue Consumer",
   "main": "index.js",
